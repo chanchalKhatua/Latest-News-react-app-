@@ -1,25 +1,111 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Navbar from "./component/Navbar";
+import Newscom from "./component/Newscom";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+const App = () => {
+  const pageSize = 17;
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      {/* <Newscom pageSize={pageSize} country="in"category="general"/> */}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Newscom
+              key="general"
+              pageSize={pageSize}
+              country="in"
+              category="general"
+            />
+          }
+        />
+        <Route
+          path="/business"
+          element={
+            <Newscom
+              key="business"
+              pageSize={pageSize}
+              country="in"
+              category="business"
+            />
+          }
+        />
+        <Route
+          path="/entertainment"
+          element={
+            <Newscom
+              key="entertainment"
+              pageSize={pageSize}
+              country="in"
+              category="entertainment"
+            />
+          }
+        />
+        <Route
+          path="/general"
+          element={
+            <Newscom
+              key="general"
+              pageSize={pageSize}
+              country="in"
+              category="general"
+            />
+          }
+        />
+        <Route
+          path="/health"
+          element={
+            <Newscom
+              key="health"
+              pageSize={pageSize}
+              country="in"
+              category="health"
+            />
+          }
+        />
+        <Route
+          path="/science"
+          element={
+            <Newscom
+              key="science"
+              pageSize={pageSize}
+              country="in"
+              category="science"
+            />
+          }
+        />
+        <Route
+          path="/sports"
+          element={
+            <Newscom
+              key="sports"
+              pageSize={pageSize}
+              country="in"
+              category="sports"
+            />
+          }
+        />
+        <Route
+          path="/technology"
+          element={
+            <Newscom
+              key="technology"
+              pageSize={pageSize}
+              country="in"
+              category="technology"
+            />
+          }
+        />
+      </Routes>
     </div>
   );
+
 }
 
-export default App;
+export default App
